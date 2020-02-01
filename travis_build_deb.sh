@@ -1,9 +1,9 @@
-mkdir build_deb
+mkdir build_deb -p
 
 (
   cd build_deb
 
-  cmake -DCMAKE_BUILD_TYPE=Release ..
+  cmake -DCMAKE_BUILD_TYPE=Release -DDEB_PREFIX=deb ..
   make install
 )
 

@@ -4,7 +4,7 @@
 #include <btrfs/ioctl.h>
 #include <btrfs/ctree.h>
 
-#include <python3.6m/Python.h>
+#include <python3.6/Python.h>
 
 PyObject *get_qgroups(const char *path)
 {
