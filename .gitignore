@@ -2,6 +2,10 @@
 cmake-build-*
 .idea
 
+# deb
+build_deb
+*.deb
+
 # Prerequisites
 *.d
 

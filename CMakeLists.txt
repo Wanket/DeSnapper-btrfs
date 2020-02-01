@@ -1,11 +1,9 @@
-cmake_minimum_required(VERSION 3.15)
+cmake_minimum_required(VERSION 3.10)
 project(DeSnapper-btrfs C)
 
 set(CMAKE_C_STANDARD 11)
 
 execute_process(COMMAND sh -c "python3-config --includes --ldflags | tr '\\n' ' '" OUTPUT_VARIABLE PYTHON_CONFIG)
-
-message(${PYTHON_CONFIG})
 
 set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -O0 -g3")
 set(CMAKE_C_FLAGS_RELEASE  "${CMAKE_C_FLAGS_RELEASE} -O2 -g")
@@ -16,3 +14,9 @@ include_directories(/usr/include/)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
 add_library(${PROJECT_NAME} SHARED btrfs.c)
+
+include(GNUInstallDirs)
+
+set(CMAKE_INSTALL_PREFIX "")
+
+install(TARGETS ${PROJECT_NAME} DESTINATION "${PROJECT_SOURCE_DIR}/deb/${CMAKE_INSTALL_FULL_LIBDIR}")
