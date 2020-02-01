@@ -10,4 +10,3 @@ Build-Depends: btrfs-progs (>= 4.15.1-1build1), libpython3-dev (>= 3.6.7-1~18.04
 Installed-Size: size
 Priority: extra
 Origin: https://github.com/Wanket/DeSnapper-btrfs
-X-Source: https://github.com/Wanket/DeSnapper-btrfs/amd64ive/v1.0.tar.gz

@@ -20,8 +20,16 @@ addons:
   apt:
     packages:
       - btrfs-progs
-      - python3m-dev
+      - python3-dev
       - cmake
 
 script:
   - ./travis_build_deb.sh
+
+deploy:
+  provider: releases
+  api_key: $GITHUB_TOKEN
+  file: "desnapper-btrfs.deb"
+  skip_cleanup: true
+  on:
+    tags: true
