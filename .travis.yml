@@ -27,10 +27,14 @@ addons:
 script:
   - ./travis_build_deb.sh
 
+before_deploy:
+  - export RELEASE_PKG_FILE=$(ls *.deb)
+
 deploy:
   provider: releases
   api_key: $GITHUB_TOKEN
-  file: "desnapper-btrfs.deb"
+  file_glob: true
+  file: "${RELEASE_PKG_FILE}"
   skip_cleanup: true
   on:
     tags: true

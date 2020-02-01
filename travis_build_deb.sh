@@ -11,4 +11,4 @@ sed -i "s/arch/$(dpkg --print-architecture)/; s/size/$(du -s deb | awk '{print $
 
 fakeroot dpkg-deb --build deb
 
-mv deb.deb desnapper-btrfs.deb
+mv deb.deb desnapper-btrfs-"$(dpkg --print-architecture)".deb
