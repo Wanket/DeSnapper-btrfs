@@ -22,6 +22,7 @@ addons:
       - btrfs-progs
       - python3-dev
       - cmake
+      - fakeroot
 
 script:
   - ./travis_build_deb.sh
