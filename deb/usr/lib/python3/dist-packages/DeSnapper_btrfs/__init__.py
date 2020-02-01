@@ -5,7 +5,7 @@ __author__ = "Ivan Borisov (ivan.alo@mail.ru)"
 __license__ = "MIT"
 __version__ = "1.0.1"
 
-native_object = CDLL("libDeSnapper-btrfs.so")
+native_object = CDLL("libDeSnapper-btrfs.so", use_errno=True)
 
 native_object.get_qgroups.restype = py_object
 
@@ -17,5 +17,3 @@ SubvolumeId = NewType("SubvolumeId", int)
 
 def get_qgroups(path: str) -> Tuple[ErrorCode, List[Tuple[QGroupLevel, SubvolumeId]]]:
     return native_object.get_qgroups(path)
-
-del native_object
