@@ -5,7 +5,7 @@ Architecture: arch
 Section: libs
 Description: Provides native functions for DeSnapper
 Depends: btrfs-progs (>= 4.15.1-1build1), python3
-Suggests: DeSnapper
+Suggests: desnapper
 Build-Depends: btrfs-progs (>= 4.15.1-1build1), libpython3-dev (>= 3.6.7-1~18.04), cmake (>=3.10.2-1ubuntu2.18.04.1), fakeroot (>=1.22-2ubuntu1)
 Installed-Size: size
 Priority: extra
