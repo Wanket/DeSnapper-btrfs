@@ -35,6 +35,8 @@ PyObject *get_qgroups(const char *path)
 
         if (return_code < 0)
         {
+            close(fd);
+
             PyTuple_SetItem(result, 0, PyLong_FromLong(-(errno == ENOENT ? ENOTTY : errno)));
 
             return result;
